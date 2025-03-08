@@ -1,46 +1,134 @@
-/* ToDoList.css */
-div {
-text-align: center;
-margin-top: 20px;
+/* Container for the entire todo list */
+.todo-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
-input {
-padding: 8px;
-width: 200px;
-margin-right: 10px;
+/* Input section styling */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-button {
-padding: 8px 12px;
-background-color: #28a745;
-color: white;
-border: none;
-cursor: pointer;
+.task-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
 }
 
-button:hover {
-background-color: #218838;
+.task-input:focus {
+    border-color: #007bff;
 }
 
-ul {
-list-style: none;
-padding: 0;
+.add-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-li {
-background: #f8f9fa;
-padding: 10px;
-margin: 5px auto;
-width: 250px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Filter section styling */
+.filter-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Table styling */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-table th,
+.task-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.task-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+.checkbox-cell {
+    width: 50px;
+}
+
+.task-done {
+    text-decoration: line-through;
+    color: #888;
 }
 
 .delete-btn {
-background-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .delete-btn:hover {
-background-color: #c82333;
+    background-color: #c82333;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .input-section {
+    flex-direction: column;
+    }
+
+    .add-btn {
+    width: 100%;
+    }
+
+    .filter-section {
+    flex-direction: column;
+    gap: 5px;
+    }
+
+    .filter-btn {
+    width: 100%;
+    }
 }
